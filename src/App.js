@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from './Components/Header';
-import Footer from './Components/Footer.js';
-import Wizard from './Components/Wizard.js';
-
+import Home from './Components/Home.js';
+import RedirectHome from './Components/RedirectHome.js'
 
 import './Assets/css/reset.css';
 import './Assets/css/fonts.css';
@@ -18,14 +17,13 @@ class App extends Component {
 
   render() {
     return(
-        <div>
-          <Header />
-
-            <Wizard />
-
-          <Footer />
-        </div>
-    )
+    	<BrowserRouter>
+    		<Switch>
+    			<Route exact path={"/"} component={ Home }/>
+    			<Route component={ RedirectHome }/>
+    		</Switch>
+    	</BrowserRouter>
+    );
   }
 
 }
