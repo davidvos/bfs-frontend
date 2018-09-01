@@ -126,22 +126,26 @@ class Wizard extends Component {
 
   dataHandler(shirt, bodyPart, desc, value, answerQuestion) {
     let newState = this.state;
-    if (bodyPart === '') {
-      newState[shirt][desc] = value;
-      this.setState(newState);
+    if(answerQuestion) {
+        newState[shirt][bodyPart][desc][value] = answerQuestion;
+        this.setState(newState);
+    } else if (bodyPart === '') {
+        newState[shirt][desc] = value;
+        this.setState(newState);
     } else {
-      newState[shirt][bodyPart][desc] = value;
+        newState[shirt][bodyPart][desc] = value;
+    }
+
       PostSizes.postSize(newState, bodyPart)
       .then((res) => res.json())
         .then((json) => {
             newState = json;
             this.setState(newState);
-            //console.log(json);
+            console.log(newState);
         })
     	.catch((error) => {
             console.log('Error in authenticating session.');
         });
-    }
   }
 
   render() {

@@ -44,6 +44,7 @@ class WizardQuestion extends Component {
           <ExtraQuestions
             title={this.props.partData.title}
             userData={this.props.userData}
+            shirtShort='shirt2'
             onSizeChange={this.props.onShirtChange}
           />
 

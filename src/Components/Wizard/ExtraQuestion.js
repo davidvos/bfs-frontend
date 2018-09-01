@@ -22,7 +22,7 @@ class ExtraQuestion extends Component {
         'userChoice': newChoice
       };
     });
-    this.props.onSizeChange(this.props.shirt, this.props.title, 'extra_questions', this.props.question, newChoice);
+    this.props.onSizeChange(this.props.shirtShort, this.props.title, 'extra_questions', this.props.question, newChoice);
   }
 
   render() {
