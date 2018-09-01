@@ -7,6 +7,7 @@ export const fetchAPI = (body, endpoint) => {
       headers: {
         'Accept':       'application/json',
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
       }
     }
     return fetch('https://api.bestfittingshirt.nl/run/' + endpoint, data)
@@ -25,6 +26,7 @@ export const fetchAPIShirts = (body) => {
       headers: {
         'Accept':       'application/json',
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
         }
     }
     return fetch('https://api.bestfittingshirt.nl/shirts', data)
