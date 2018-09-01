@@ -9,32 +9,41 @@ class Suggestions extends Component {
     constructor() {
         super();
         this.state = {
-
+            'data': null
         }
     }
 
-    componentDidMount() {
-        var shirts;
+    componentWillMount() {
+        this.loadShirts();
+    }
+
+    loadShirts() {
         GetShirts.getShirts(this.props.userData)
         .then((res) => res.json())
           .then((json) => {
-              shirts = json;
-              this.setState(shirts);
-              console.log(shirts);
+              this.setState({
+                'data': json
+            });
           })
-        .catch((error) => {
-              console.log('Error.');
-          });
     }
 
     render() {
+
+        if (!this.state.data) {
+            return <div />
+        }
+
+        console.log(this.state);
+
+        let suggestions = this.state.data.data.slice(0,5);
+
         return(
           <section className='suggestions'>
             <div className='wrapper'>
 
               <h3>Suggesties</h3>
 
-
+              {suggestions.map((suggestion) => <Suggestion key={suggestion.uuid} suggestionData={suggestion} />)}
 
             </div>
           </section>

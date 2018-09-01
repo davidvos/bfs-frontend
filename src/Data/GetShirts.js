@@ -1,3 +1,3 @@
-import { fetchAPI, fetchAPIShirts } from '../services/api/index.js';
+import { fetchAPIShirts } from '../services/api/index.js';
 
 export const getShirts = (body) => fetchAPIShirts(body);

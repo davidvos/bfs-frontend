@@ -35,15 +35,14 @@ class MeasureSpecify extends Component {
 
     classNames[this.props.userData[this.props.shirtShort][this.props.title].review] += 'active';
 
+    var sizes = this.props.partData.sizes;
+
     return(
       <div>
         <p className='measureSpecify'><span>{this.props.title}</span> van {this.props.userData[this.props.shirtShort].title} in cm</p>
         <div className='clothing1'>
           <select id='sizePicker' value={this.props.userData[this.props.shirtShort][this.props.title].size} onChange={this.onShirtChange}>
-            <option value="39.5">39,5</option>
-            <option value="40.0">40,0</option>
-            <option value="40.5">40,5</option>
-            <option value="41.0">41,0</option>
+            {sizes.map((size) => <option value={size}>{size}</option>)}
           </select>
           <div className='preferencePicker'>
             <a className={classNames.strak} onClick={this.togglereview.bind(this, 'strak')}>te strak</a>

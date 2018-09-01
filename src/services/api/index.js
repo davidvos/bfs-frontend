@@ -16,7 +16,7 @@ export const fetchAPI = (body, endpoint) => {
     })
 }
 
-export const fetchAPIShirts = (body, endpoint) => {
+export const fetchAPIShirts = (body) => {
     let data = {
       method: 'POST',
       body: JSON.stringify(
@@ -24,10 +24,10 @@ export const fetchAPIShirts = (body, endpoint) => {
       ),
       headers: {
         'Accept':       'application/json',
-'Content-Type':'application/x-www-form-urlencoded'
-      }
+        'Content-Type': 'application/json',
+        }
     }
-    return fetch('https://api.bestfittingshirt.com/shirts/', data)
+    return fetch('https://api.bestfittingshirt.com/shirts', data)
     .catch((error) => {
         console.log(error);
         throw 'An unknown error occured';

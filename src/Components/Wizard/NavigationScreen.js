@@ -7,7 +7,7 @@ class NavigationScreen extends Component {
   constructor() {
     super();
     this.state = {
-      'preference': 'chest'
+      'preference': 'collar'
     }
     this.updateNext = this.updateNext.bind(this)
   }

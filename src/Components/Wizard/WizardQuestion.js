@@ -29,6 +29,7 @@ class WizardQuestion extends Component {
 
           <MeasureSpecify
             title={this.props.partData.title}
+            partData = {this.props.partData}
             userData={this.props.userData}
             shirtShort='shirt1'
             onSizeChange={this.props.onShirtChange}
@@ -36,6 +37,7 @@ class WizardQuestion extends Component {
 
           <MeasureSpecify
             title={this.props.partData.title}
+            partData = {this.props.partData}
             userData={this.props.userData}
             shirtShort='shirt2'
             onSizeChange={this.props.onShirtChange}
