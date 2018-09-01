@@ -17,7 +17,7 @@ class Wizard extends Component {
     super();
     this.state = {
       'shirt1': {
-        'title': 'asd',
+        'title': '',
         'collar': {
           'size': QuestionData('collar').sizes[0],
           'review': 'strak',
@@ -56,7 +56,7 @@ class Wizard extends Component {
         }
       },
       'shirt2': {
-        'title': 'dsa',
+        'title': '',
         'collar': {
           'size': QuestionData('collar').sizes[0],
           'review': 'strak',
