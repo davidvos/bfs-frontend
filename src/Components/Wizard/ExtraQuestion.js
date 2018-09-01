@@ -4,9 +4,6 @@ class ExtraQuestion extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      'userChoice': 'yes'
-    }
     this.toggleYesNo = this.toggleYesNo.bind(this);
   }
 
@@ -17,11 +14,6 @@ class ExtraQuestion extends Component {
     } else {
       newChoice = 'no'
     }
-    this.setState(function(prevState, props) {
-      return {
-        'userChoice': newChoice
-      };
-    });
     this.props.onSizeChange(this.props.shirtShort, this.props.title, 'extra_questions', this.props.question, newChoice);
   }
 
@@ -32,7 +24,7 @@ class ExtraQuestion extends Component {
       'no': '',
     }
 
-    classNames[this.state.userChoice] += 'active';
+    classNames[this.props.userData[this.props.shirtShort][this.props.title].extra_questions[this.props.question]] += 'active';
 
     return(
       <div className='extraQuestion'>

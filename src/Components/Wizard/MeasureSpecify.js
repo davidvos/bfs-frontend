@@ -16,10 +16,12 @@ class MeasureSpecify extends Component {
     } else {
       newChoice = 'wijd'
     }
+    this.props.forceUpdate;
     this.props.onSizeChange(this.props.shirtShort, this.props.title, 'review', newChoice);
   }
 
   onShirtChange(e) {
+    this.props.forceUpdate;
     this.props.onSizeChange(this.props.shirtShort, this.props.title, 'size', parseFloat(e.target.value));
   }
 
