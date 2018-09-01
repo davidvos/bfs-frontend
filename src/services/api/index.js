@@ -4,6 +4,7 @@ export const fetchAPI = (body, endpoint) => {
       body: JSON.stringify(
         body
       ),
+      mode: 'cors',
       headers: {
         'Accept':       'application/json',
         'Content-Type': 'application/json',
@@ -23,6 +24,7 @@ export const fetchAPIShirts = (body) => {
       body: JSON.stringify(
         body
       ),
+      mode: 'cors',
       headers: {
         'Accept':       'application/json',
         'Content-Type': 'application/json',
