@@ -1,14 +1,14 @@
 {
   "main.css": "static/css/main.7eafae03.css",
   "main.css.map": "static/css/main.7eafae03.css.map",
-  "main.js": "static/js/main.407aa553.js",
-  "main.js.map": "static/js/main.407aa553.js.map",
-  "static/media/chest.png": "static/media/chest.0d142de7.png",
-  "static/media/collar.png": "static/media/collar.d4120615.png",
-  "static/media/homeBackground.jpg": "static/media/homeBackground.8216136a.jpg",
-  "static/media/length.png": "static/media/length.469282d1.png",
-  "static/media/logo.png": "static/media/logo.d7af2330.png",
-  "static/media/shoulder.png": "static/media/shoulder.b78ff87b.png",
-  "static/media/sleeve.png": "static/media/sleeve.5b0fcf4f.png",
-  "static/media/waist.png": "static/media/waist.241262ce.png"
+  "main.js": "static/js/main.f3b0041d.js",
+  "main.js.map": "static/js/main.f3b0041d.js.map",
+  "static\\media\\chest.png": "static/media/chest.0d142de7.png",
+  "static\\media\\collar.png": "static/media/collar.d4120615.png",
+  "static\\media\\homeBackground.jpg": "static/media/homeBackground.8216136a.jpg",
+  "static\\media\\length.png": "static/media/length.469282d1.png",
+  "static\\media\\logo.png": "static/media/logo.d7af2330.png",
+  "static\\media\\shoulder.png": "static/media/shoulder.b78ff87b.png",
+  "static\\media\\sleeve.png": "static/media/sleeve.5b0fcf4f.png",
+  "static\\media\\waist.png": "static/media/waist.241262ce.png"
 }
