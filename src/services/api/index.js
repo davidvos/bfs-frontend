@@ -35,3 +35,4 @@ export const fetchAPIShirts = (body) => {
         throw 'An unknown error occured';
     })
 }
+
