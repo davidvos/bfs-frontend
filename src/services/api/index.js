@@ -24,7 +24,7 @@ export const fetchAPIShirts = (body, endpoint) => {
       ),
       headers: {
         'Accept':       'application/json',
-        'Content-Type': 'application/json',
+'Content-Type':'application/x-www-form-urlencoded'
       }
     }
     return fetch('https://api.bestfittingshirt.com/shirts/', data)
