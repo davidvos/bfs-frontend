@@ -11,7 +11,7 @@ class NavButtons extends Component {
     return(
       <div className='proceedButtons'>
         <Link to={prev_url} className='previous'>Vorige</Link>
-        <Link to={next_url} className='next'>Volgende</Link>
+        <Link to={next_url} className='next'>Bevestigen</Link>
       </div>
     )
   }

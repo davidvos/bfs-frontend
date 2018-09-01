@@ -19,37 +19,37 @@ class Wizard extends Component {
       'shirt1': {
         'title': 'asd',
         'collar': {
-          'size': '',
+          'size': QuestionData('collar').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'shoulders': {
-          'size': '',
+          'size': QuestionData('shoulders').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'sleeve': {
-          'size': '',
+          'size': QuestionData('sleeve').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'chest': {
-          'size': '',
+          'size': QuestionData('chest').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'waist': {
-          'size': '',
+          'size': QuestionData('waist').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'length': {
-          'size': '',
+          'size': QuestionData('length').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
@@ -58,37 +58,37 @@ class Wizard extends Component {
       'shirt2': {
         'title': 'dsa',
         'collar': {
-          'size': '',
+          'size': QuestionData('collar').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'shoulders': {
-          'size': '',
+          'size': QuestionData('shoulders').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'sleeve': {
-          'size': '',
+          'size': QuestionData('sleeve').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'chest': {
-          'size': '',
+          'size': QuestionData('chest').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'waist': {
-          'size': '',
+          'size': QuestionData('waist').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }
         },
         'length': {
-          'size': '',
+          'size': QuestionData('length').sizes[0],
           'review': 'strak',
           'extra_questions': {
           }

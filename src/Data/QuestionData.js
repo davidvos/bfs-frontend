@@ -3,6 +3,7 @@ function QuestionData(part) {
   let questiondata = {
     'collar': {
       'title': 'collar',
+      'dutch_title': 'kraag',
       'prev': '/wizard/navigation',
       'next': '/wizard/shoulders',
       'img_url': require('../Assets/img/collar.png'),
@@ -14,6 +15,7 @@ function QuestionData(part) {
     },
     'shoulders': {
       'title': 'shoulders',
+      'dutch_title': 'schouders',
       'prev': '/wizard/collar',
       'next': '/wizard/sleeve',
       'img_url': require('../Assets/img/shoulder.png'),
@@ -26,6 +28,7 @@ function QuestionData(part) {
     },
     'sleeve': {
       'title': 'sleeve',
+      'dutch_title': 'mouw',
       'prev': '/wizard/shoulders',
       'next': '/wizard/chest',
       'img_url': require('../Assets/img/sleeve.png'),
@@ -39,6 +42,7 @@ function QuestionData(part) {
     },
     'chest': {
       'title': 'chest',
+      'dutch_title': 'borst',
       'prev': '/wizard/sleeve',
       'next': '/wizard/waist',
       'img_url': require('../Assets/img/chest.png'),
@@ -54,6 +58,7 @@ function QuestionData(part) {
     },
     'waist': {
       'title': 'waist',
+      'dutch_title': 'middel',
       'prev': '/wizard/chest',
       'next': '/wizard/length',
       'img_url': require('../Assets/img/waist.png'),
@@ -69,6 +74,7 @@ function QuestionData(part) {
     },
     'length': {
       'title': 'length',
+      'dutch_title': 'lengte',
       'prev': '/wizard/waist',
       'next': '/wizard/collar',
       'img_url': require('../Assets/img/length.png'),
