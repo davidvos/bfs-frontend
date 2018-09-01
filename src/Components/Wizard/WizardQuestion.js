@@ -60,7 +60,9 @@ class WizardQuestion extends Component {
         </div>
 
       </section>
-      <Suggestions />
+      <Suggestions
+        userData={this.props.userData}
+      />
       </div>
     );
 

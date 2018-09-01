@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
 
-import Suggestion from './Suggestion'
+import Suggestion from './Suggestion';
+
+import * as GetShirts from '../../Data/GetShirts.js';
 
 class Suggestions extends Component {
 
-  render() {
-    return(
-      <section className='suggestions'>
-        <div className='wrapper'>
+    constructor() {
+        super();
+        this.state = {
 
-          <h3>Suggesties</h3>
+        }
+    }
 
-          <Suggestion />
+    componentDidMount() {
+        var shirts;
+        GetShirts.getShirts(this.props.userData)
+        .then((res) => res.json())
+          .then((json) => {
+              shirts = json;
+              this.setState(shirts);
+              console.log(shirts);
+          })
+        .catch((error) => {
+              console.log('Error.');
+          });
+    }
 
-          <Suggestion />
+    render() {
+        return(
+          <section className='suggestions'>
+            <div className='wrapper'>
 
-        </div>
-      </section>
-    )
-  }
+              <h3>Suggesties</h3>
+
+
+
+            </div>
+          </section>
+        )
+    }
 
 }
 

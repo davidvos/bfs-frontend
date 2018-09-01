@@ -146,7 +146,8 @@ class Wizard extends Component {
     	.catch((error) => {
             console.log('Error in authenticating session.');
         });
-  }
+    console.log(this.state);
+}
 
   render() {
     return(
