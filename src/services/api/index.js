@@ -9,7 +9,7 @@ export const fetchAPI = (body, endpoint) => {
         'Content-Type': 'application/json',
       }
     }
-    return fetch('https://api.bestfittingshirt.com/run/' + endpoint, data)
+    return fetch('https://api.bestfittingshirt.nl/run/' + endpoint, data)
     .catch((error) => {
         console.log(error);
         throw 'An unknown error occured';
@@ -27,7 +27,7 @@ export const fetchAPIShirts = (body) => {
         'Content-Type': 'application/json',
         }
     }
-    return fetch('https://api.bestfittingshirt.com/shirts', data)
+    return fetch('https://api.bestfittingshirt.nl/shirts', data)
     .catch((error) => {
         console.log(error);
         throw 'An unknown error occured';
