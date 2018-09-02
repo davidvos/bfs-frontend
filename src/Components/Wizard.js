@@ -134,23 +134,21 @@ class Wizard extends Component {
         this.setState(newState);
         return;
     } else {
+        newState['shirt1'][bodyPart]['extra_questions'] = [];
+        newState['shirt2'][bodyPart]['extra_questions'] = [];
         newState[shirt][bodyPart][desc] = value;
-        newState[shirt][bodyPart]['extra_questions'] = {};
         this.setState(newState);
     }
-
     console.log(newState);
       PostSizes.postSize(newState, bodyPart)
       .then((res) => res.json())
         .then((json) => {
             newState = json;
             this.setState(newState);
-            console.log(newState);
         })
     	.catch((error) => {
             console.log('Error in authenticating session.');
         });
-    console.log(this.state);
 }
 
   render() {
