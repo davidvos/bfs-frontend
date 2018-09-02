@@ -33,7 +33,6 @@ class Suggestions extends Component {
             return <div />
         }
 
-        console.log(this.state);
 
         let suggestions = this.state.data.data.slice(0,5);
 

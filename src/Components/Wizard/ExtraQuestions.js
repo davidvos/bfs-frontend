@@ -15,7 +15,6 @@ class ExtraQuestions extends Component {
 
         const extraQuestionsShirt1 = Object.keys(extraQuestions1);
 
-        console.log(extraQuestionsShirt1);
 
         return(
           <div className='extraQuestions'>
