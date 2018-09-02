@@ -56,7 +56,7 @@ class WizardQuestion extends Component {
           />
 
           <WizardNavigation
-            partData={this.props.partData.title}
+            partData={this.props.partData}
           />
 
         </div>

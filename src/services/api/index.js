@@ -1,12 +1,13 @@
 export const fetchAPI = (body, endpoint) => {
     let data = {
       method: 'POST',
+      credentials: 'include',
       body: JSON.stringify(
         body
       ),
       headers: {
         'Accept':       'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
         //'Access-Control-Allow-Origin':'*',
       }
     }
@@ -20,12 +21,13 @@ export const fetchAPI = (body, endpoint) => {
 export const fetchAPIShirts = (body) => {
     let data = {
       method: 'POST',
+      credentials: 'include',
       body: JSON.stringify(
         body
       ),
       headers: {
         'Accept':       'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
         //'Access-Control-Allow-Origin':'*',
         }
     }
@@ -35,4 +37,3 @@ export const fetchAPIShirts = (body) => {
         throw 'An unknown error occured';
     })
 }
-

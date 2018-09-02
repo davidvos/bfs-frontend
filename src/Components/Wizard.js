@@ -132,10 +132,14 @@ class Wizard extends Component {
     } else if (bodyPart === '') {
         newState[shirt][desc] = value;
         this.setState(newState);
+        return;
     } else {
         newState[shirt][bodyPart][desc] = value;
+        newState[shirt][bodyPart]['extra_questions'] = {};
+        this.setState(newState);
     }
 
+    console.log(newState);
       PostSizes.postSize(newState, bodyPart)
       .then((res) => res.json())
         .then((json) => {
