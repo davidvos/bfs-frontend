@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class WizardNavigation extends Component {
 
   componentDidMount() {
-    document.getElementById(this.props.partData).classList.add("active");
+    document.getElementById(this.props.partData.title).classList.add("active");
   }
 
   render() {
