@@ -387,7 +387,8 @@ select {
   border-radius: 2px;
   flex-grow: 1;
   text-decoration: none;
-
+  font-family: 'Lato';
+  font-size: 13px;
 }
 
 .organisationButtons {

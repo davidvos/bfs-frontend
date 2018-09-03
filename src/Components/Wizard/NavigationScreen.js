@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import NavButtons from './NavButtons'
+import NavButtons from './NavButtons';
+
+import { Link } from "react-router-dom";
 
 class NavigationScreen extends Component {
 
@@ -42,7 +44,10 @@ class NavigationScreen extends Component {
           <li><a className={classNames.waist} id='waist' onClick={this.updateNext}>Middel</a></li>
           <li><a className={classNames.length} id='length' onClick={this.updateNext}>Lengte</a></li>
         </ul>
-        <NavButtons next={nextPage} prev='/wizard/explanation' />
+        <div className='proceedButtons'>
+          <Link to='/wizard/explanation' className='previous'>Vorige</Link>
+          <Link to={nextPage} className='next'>Volgende</Link>
+        </div>
       </div>
     )
   }

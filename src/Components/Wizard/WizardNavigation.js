@@ -6,6 +6,7 @@ class WizardNavigation extends Component {
 
   componentDidMount() {
     document.getElementById(this.props.partData.title).classList.add("active");
+    
   }
 
   render() {

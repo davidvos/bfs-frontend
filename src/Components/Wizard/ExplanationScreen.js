@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import NavButtons from './NavButtons'
 
+import { Link } from "react-router-dom";
+
 class ExplanationScreen extends Component {
 
   render() {
@@ -25,7 +27,11 @@ class ExplanationScreen extends Component {
             <p>Kies jouw nieuwe, best passende overhemd</p>
           </li>
         </ul>
-        <NavButtons next='/wizard/navigation' prev='' />
+        <div className='proceedButtons'>
+          <Link to='/' className='previous'>Vorige</Link>
+          <Link to='/wizard/navigation' className='next'>Volgende</Link>
+        </div>
+
       </div>
     )
   }

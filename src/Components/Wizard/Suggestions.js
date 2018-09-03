@@ -6,43 +6,24 @@ import * as GetShirts from '../../Data/GetShirts.js';
 
 class Suggestions extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            'data': null
-        }
-    }
-
-    componentWillMount() {
-        this.loadShirts();
-    }
-
-    loadShirts() {
-        GetShirts.getShirts(this.props.userData)
-        .then((res) => res.json())
-          .then((json) => {
-              this.setState({
-                'data': json
-            });
-          })
-    }
+    constructor(props) {
+        super(props);
+}
 
     render() {
 
-        if (!this.state.data) {
+        if (this.props.shirtData == {}) {
             return <div />
         }
 
-
-        let suggestions = this.state.data.data.slice(0,5);
-
+        let suggestions = this.props.shirtData.data;
         return(
           <section className='suggestions'>
             <div className='wrapper'>
 
               <h3>Suggesties</h3>
 
-              {suggestions.map((suggestion) => <Suggestion key={suggestion.uuid} suggestionData={suggestion} />)}
+              {suggestions.map((suggestion, i) => <Suggestion key={i} suggestionData={suggestion} />)}
 
             </div>
           </section>

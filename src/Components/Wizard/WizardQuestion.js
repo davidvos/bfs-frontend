@@ -53,6 +53,9 @@ class WizardQuestion extends Component {
           <NavButtons
             prev={this.props.partData.prev}
             next={this.props.partData.next}
+            partData = {this.props.partData}
+            userData={this.props.userData}
+            loadShirts={this.props.loadShirts}
           />
 
           <WizardNavigation
@@ -64,6 +67,8 @@ class WizardQuestion extends Component {
       </section>
       <Suggestions
         userData={this.props.userData}
+        shirtData={this.props.shirtData}
+        loadShirts={this.props.loadShirts}
       />
       </div>
     );
