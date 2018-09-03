@@ -14,7 +14,8 @@ class ExtraQuestion extends Component {
     } else {
       newChoice = 'no'
     }
-    this.props.onSizeChange(this.props.shirtShort, this.props.title, 'extra_questions', this.props.question, newChoice);
+    console.log(this.props.questionNo);
+    this.props.onSizeChange(this.props.shirtShort, this.props.title, 'extra_questions', this.props.questionNo, newChoice);
   }
 
   render() {
@@ -24,7 +25,7 @@ class ExtraQuestion extends Component {
       'no': '',
     }
 
-    classNames[this.props.userData[this.props.shirtShort][this.props.title].extra_questions[this.props.question]] += 'active';
+    classNames[this.props.userData[this.props.shirtShort][this.props.title].extra_questions[this.props.questionNo][1]] += 'active';
 
     return(
       <div className='extraQuestion'>

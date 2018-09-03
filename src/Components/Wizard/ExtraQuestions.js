@@ -10,15 +10,19 @@ class ExtraQuestions extends Component {
 
 
     render() {
+
         let title = this.props.title;
+
         let extraQuestions1 = this.props.userData.shirt1[title].extra_questions;
-
-        const extraQuestionsShirt1 = Object.keys(extraQuestions1);
-
+        let extraQuestions = [];
+        for (var i in extraQuestions1) {
+            extraQuestions.push([i, extraQuestions1[i][0]]);
+        }
+        console.log(extraQuestions);
 
         return(
           <div className='extraQuestions'>
-            {extraQuestionsShirt1.map((question) => <ExtraQuestion key={question} onSizeChange={this.props.onSizeChange} userData={this.props.userData} title={title} shirtShort='shirt1' question={question} />)}
+            {extraQuestions.map((question) => <ExtraQuestion key={question[0]} questionNo={question[0]} onSizeChange={this.props.onSizeChange} userData={this.props.userData} title={title} shirtShort='shirt1' question={question[1]} />)}
           </div>
         )
     }

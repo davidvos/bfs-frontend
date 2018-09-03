@@ -24,38 +24,32 @@ class Wizard extends Component {
                 'collar': {
                   'size': QuestionData('collar').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'shoulders': {
                   'size': QuestionData('shoulders').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'sleeve': {
                   'size': QuestionData('sleeve').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'chest': {
                   'size': QuestionData('chest').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'waist': {
                   'size': QuestionData('waist').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'length': {
                   'size': QuestionData('length').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 }
           },
           'shirt2': {
@@ -63,38 +57,32 @@ class Wizard extends Component {
                 'collar': {
                   'size': QuestionData('collar').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'shoulders': {
                   'size': QuestionData('shoulders').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'sleeve': {
                   'size': QuestionData('sleeve').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'chest': {
                   'size': QuestionData('chest').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'waist': {
                   'size': QuestionData('waist').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 },
                 'length': {
                   'size': QuestionData('length').sizes[0],
                   'review': 'strak',
-                  'extra_questions': {
-                  }
+                  'extra_questions': ''
                 }
             },
             "margins": {
@@ -143,7 +131,8 @@ class Wizard extends Component {
   dataHandler(shirt, bodyPart, desc, value, answerQuestion) {
     let newState = this.state.userData;
     if(answerQuestion) {
-        newState[shirt][bodyPart][desc][value] = answerQuestion;
+        newState[shirt][bodyPart][desc][value][1] = answerQuestion;
+        newState[shirt][bodyPart][desc].splice(value+1, 3);
         this.setState({
             'userData': newState
         });

@@ -19,7 +19,7 @@ class NavButtons extends Component {
         var extraQuestions = this.props.userData.shirt1[title].extra_questions;
         var error = false;
         for(var i in extraQuestions) {
-            if(extraQuestions[i] == '') {
+            if(extraQuestions[i][1] == '') {
                 error = true;
             }
         }
