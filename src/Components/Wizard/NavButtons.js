@@ -31,7 +31,6 @@ class NavButtons extends Component {
             })
         } else {
             this.props.loadShirts();
-            this.props.history.push(this.props.next);
         }
     }
 
