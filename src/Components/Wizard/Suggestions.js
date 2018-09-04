@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Suggestion from './Suggestion';
+import SuggestionsTest from './SuggestionTest';
 
 import * as GetShirts from '../../Data/GetShirts.js';
 
@@ -8,41 +8,37 @@ class Suggestions extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            'data': {},
-            'suggestions': []
-        }
     }
-
-    componentWillMount() {
-        this.setState({
-            'data': this.props.shirtData
-        })
-    }
-
 
     render() {
 
-        console.log('rerender!');
-
-        if (this.state.data == {}) {
-            return <div />
+        var suggestionsList = [];
+        for (var i in this.props.shirtData.data) {
+            var name = this.props.shirtData.data[i].name;
+            var price = this.props.shirtData.data[i].price;
+            var fit_percentage = this.props.shirtData.data[i].fit.fit_percentage;
+            var fit_comparison = this.props.shirtData.data[i].fit.fit_comparison;
+            var fit_attributes = this.props.shirtData.data[i].fit.fit_attributes;
+            var photo = this.props.shirtData.data[i].photo;
+            var brand = this.props.shirtData.data[i].brand;
+            suggestionsList.push(<SuggestionsTest
+                                    name={name}
+                                    price={price}
+                                    fit_percentage={fit_percentage}
+                                    fit_attributes={fit_attributes}
+                                    fit_comparison={fit_comparison}
+                                    brand={brand}
+                                    photo={photo}
+                                />);
         }
 
-
-        var suggestions = [];
-
-        for (var i in Object.keys(this.state.data.data)) {
-            suggestions.push(<Suggestion suggestionData={this.state.data.data[i]} />)
-        }
-        console.log(suggestions);
         return(
           <section className='suggestions'>
             <div className='wrapper'>
 
               <h3>Suggesties</h3>
 
-              {suggestions}
+              {suggestionsList}
 
             </div>
           </section>

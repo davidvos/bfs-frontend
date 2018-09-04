@@ -22,32 +22,32 @@ class Wizard extends Component {
           'shirt1': {
                 'title': 'Tommy',
                 'collar': {
-                  'size': QuestionData('collar').sizes[0],
+                  'size': 38.5,
                   'review': 'past',
                   'extra_questions': '',
                 },
                 'shoulders': {
-                  'size': QuestionData('shoulders').sizes[0],
+                  'size': 45.0,
                   'review': 'past',
                   'extra_questions': '',
                 },
                 'sleeve': {
-                  'size': QuestionData('sleeve').sizes[0],
+                  'size': 88.0,
                   'review': 'past',
                   'extra_questions': '',
                 },
                 'chest': {
-                  'size': QuestionData('chest').sizes[0],
+                  'size': 55.0,
                   'review': 'past',
                   'extra_questions': '',
                 },
                 'waist': {
-                  'size': QuestionData('waist').sizes[0],
+                  'size': 49.0,
                   'review': 'past',
                   'extra_questions': '',
                 },
                 'length': {
-                  'size': QuestionData('length').sizes[0],
+                  'size': 80.0,
                   'review': 'past',
                   'extra_questions': '',
                 }
@@ -55,32 +55,32 @@ class Wizard extends Component {
           'shirt2': {
                 'title': 'Hugo',
                 'collar': {
-                  'size': QuestionData('collar').sizes[0],
+                  'size': 40.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
                 'shoulders': {
-                  'size': QuestionData('shoulders').sizes[0],
+                  'size': 48.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
                 'sleeve': {
-                  'size': QuestionData('sleeve').sizes[0],
+                  'size': 91.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
                 'chest': {
-                  'size': QuestionData('chest').sizes[0],
+                  'size': 58.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
                 'waist': {
-                  'size': QuestionData('waist').sizes[0],
+                  'size': 52.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
                 'length': {
-                  'size': QuestionData('length').sizes[0],
+                  'size': 83.0,
                   'review': 'past',
                   'extra_questions': ''
                 }
@@ -120,17 +120,40 @@ class Wizard extends Component {
     this.setCompleted = this.setCompleted.bind(this);
   }
 
-  loadShirts() {
-      GetShirts.getShirts(this.state.userData)
-      .then((res) => res.json())
-        .then((json) => {
-            this.setState({
-              'shirts': json
-          });
-        })
+  loadShirts(title) {
+      if(title) {
+          var newState;
+          PostSizes.postSize(this.state.userData, title)
+          .then((res) => res.json())
+            .then((json) => {
+                newState = json;
+                this.setState({
+                    'userData': newState
+                });
+                GetShirts.getShirts(newState)
+                .then((res) => res.json())
+                  .then((json) => {
+                      this.setState({
+                        'shirts': json
+                    });
+                  })
+            })
+        	.catch((error) => {
+                console.log('Error in authenticating session.');
+            });
+      } else {
+          GetShirts.getShirts(this.state.userData)
+          .then((res) => res.json())
+            .then((json) => {
+                this.setState({
+                  'shirts': json
+              });
+            })
+      }
   }
 
   dataHandler(shirt, bodyPart, desc, value, answerQuestion) {
+
     let newState = this.state.userData;
     if(answerQuestion) {
         newState[shirt][bodyPart][desc][value][1] = answerQuestion;
@@ -172,7 +195,6 @@ class Wizard extends Component {
         this.setState({
              newState
         })
-        console.log(this.state)
     }
 
     componentWillMount() {

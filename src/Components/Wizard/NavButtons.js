@@ -17,6 +17,7 @@ class NavButtons extends Component {
     dataConfirmation() {
         var title = this.props.partData.title;
         var extraQuestions = this.props.userData.shirt1[title].extra_questions;
+        var warning = false;
         var error = false;
         for(var i in extraQuestions) {
             if(extraQuestions[i][1] == '') {
@@ -24,15 +25,21 @@ class NavButtons extends Component {
             }
         }
 
+        if(this.props.userData.error) {
+            warning = true;
+        }
+
+
         let errors = '';
         if(error === true) {
             this.setState({
               'errors': 'Je hebt een vraag niet ingevuld. Vul deze in om door te gaan.'
             })
+        } else if (warning === true) {
+            console.log('warning');
         } else {
-            this.props.loadShirts();
+            this.props.loadShirts(title);
             this.props.setCompleted(title);
-            this.props.history.push(this.props.next);
         }
     }
 
