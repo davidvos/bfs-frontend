@@ -56,10 +56,12 @@ class WizardQuestion extends Component {
             partData = {this.props.partData}
             userData={this.props.userData}
             loadShirts={this.props.loadShirts}
+            setCompleted={this.props.setCompleted}
           />
 
           <WizardNavigation
             partData={this.props.partData}
+            completed={this.props.completed}
           />
 
         </div>

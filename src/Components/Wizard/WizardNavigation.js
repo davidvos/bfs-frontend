@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 
 class WizardNavigation extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
   componentDidMount() {
     document.getElementById(this.props.partData.title).classList.add("active");
-    
+
+    for (var i in this.props.completed) {
+        document.getElementById(this.props.completed[i]).classList.add("completed")
+    }
+
   }
 
   render() {

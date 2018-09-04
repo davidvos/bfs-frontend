@@ -18,7 +18,6 @@ class ExtraQuestions extends Component {
         for (var i in extraQuestions1) {
             extraQuestions.push([i, extraQuestions1[i][0]]);
         }
-        console.log(extraQuestions);
 
         return(
           <div className='extraQuestions'>

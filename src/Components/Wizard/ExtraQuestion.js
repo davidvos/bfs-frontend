@@ -14,7 +14,6 @@ class ExtraQuestion extends Component {
     } else {
       newChoice = 'no'
     }
-    console.log(this.props.questionNo);
     this.props.onSizeChange(this.props.shirtShort, this.props.title, 'extra_questions', this.props.questionNo, newChoice);
   }
 

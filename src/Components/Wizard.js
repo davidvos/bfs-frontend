@@ -23,65 +23,65 @@ class Wizard extends Component {
                 'title': 'Tommy',
                 'collar': {
                   'size': QuestionData('collar').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 },
                 'shoulders': {
                   'size': QuestionData('shoulders').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 },
                 'sleeve': {
                   'size': QuestionData('sleeve').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 },
                 'chest': {
                   'size': QuestionData('chest').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 },
                 'waist': {
                   'size': QuestionData('waist').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 },
                 'length': {
                   'size': QuestionData('length').sizes[0],
-                  'review': 'strak',
-                  'extra_questions': ''
+                  'review': 'past',
+                  'extra_questions': '',
                 }
           },
           'shirt2': {
                 'title': 'Hugo',
                 'collar': {
                   'size': QuestionData('collar').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 },
                 'shoulders': {
                   'size': QuestionData('shoulders').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 },
                 'sleeve': {
                   'size': QuestionData('sleeve').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 },
                 'chest': {
                   'size': QuestionData('chest').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 },
                 'waist': {
                   'size': QuestionData('waist').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 },
                 'length': {
                   'size': QuestionData('length').sizes[0],
-                  'review': 'strak',
+                  'review': 'past',
                   'extra_questions': ''
                 }
             },
@@ -112,10 +112,12 @@ class Wizard extends Component {
                 }
             }
         },
-    'shirts': {}
+    'shirts': {},
+    'completed': []
     }
     this.dataHandler = this.dataHandler.bind(this);
     this.loadShirts = this.loadShirts.bind(this);
+    this.setCompleted = this.setCompleted.bind(this);
   }
 
   loadShirts() {
@@ -164,6 +166,15 @@ class Wizard extends Component {
         });
 }
 
+    setCompleted(title) {
+        var newState = this.state;
+        newState['completed'].push(title);
+        this.setState({
+             newState
+        })
+        console.log(this.state)
+    }
+
     componentWillMount() {
         this.loadShirts();
     }
@@ -201,7 +212,9 @@ class Wizard extends Component {
               partData={QuestionData('collar')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 
@@ -213,7 +226,9 @@ class Wizard extends Component {
               partData={QuestionData('shoulders')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 
@@ -225,7 +240,9 @@ class Wizard extends Component {
               partData={QuestionData('sleeve')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 
@@ -237,7 +254,9 @@ class Wizard extends Component {
               partData={QuestionData('chest')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 
@@ -249,7 +268,9 @@ class Wizard extends Component {
               partData={QuestionData('waist')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 
@@ -261,7 +282,9 @@ class Wizard extends Component {
               partData={QuestionData('length')}
               userData={this.state.userData}
               shirtData={this.state.shirts}
+              completed={this.state.completed}
               loadShirts={this.loadShirts}
+              setCompleted={this.setCompleted}
             />}
           />
 

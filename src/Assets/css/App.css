@@ -48,6 +48,14 @@ li {
 .active a {
   color: #fff !important;
 }
+.completed {
+  background: #85FBA6;
+  color: #fff !important;
+}
+.completed a {
+    color: #000 !important;
+}
+
 
 header {
   display: flex;
@@ -536,7 +544,7 @@ select {
 }
 
 .specificatieLijst ul:nth-of-type(2) {
-  color: #2ecc71
+  color: #000;
 }
 
 .specificatieLijst li {
