@@ -8,37 +8,72 @@ class SuggestionTest extends Component {
         super(props);
         this.state = {
             'fit_comparison': {
-                'collar': '-',
-                'shoulders': '-',
-                'sleeve': '-',
-                'chest': '-',
-                'waist': '-',
-                'length': '-'
+                'collar': ['-', this.props.comparison_collar, this.props.attributes_collar],
+                'shoulders': ['-', this.props.comparison_shoulders, this.props.attributes_shoulders],
+                'sleeve': ['-', this.props.comparison_sleeve, this.props.attributes_sleeve],
+                'chest': ['-', this.props.comparison_chest, this.props.attributes_chest],
+                'waist': ['-', this.props.comparison_waist, this.props.attributes_waist],
+                'length': ['-', this.props.comparison_length, this.props.attributes_length]
             }
         }
-        this.loadComparison = this.loadComparison.bind(this);
-    }
-
-    loadComparison() {
-       let current_part = Object.keys(this.state.fit_comparison);
-       let newState = this.state;
-       for(var i in current_part) {
-           if (this.props.fit_attributes[current_part[i]] == 0) {
-               newState.fit_comparison[current_part[i]] = <FontAwesomeIcon icon="check" />;
-           } else if (this.props.fit_attributes[current_part[i]] != null) {
-               newState.fit_comparison[current_part[i]] = this.props.fit_comparison[0][current_part[i]].explanation;
-           }
-       }
-       this.setState({
-           newState
-       });
-   }
-
-   componentDidMount() {
-        this.loadComparison();
     }
 
     render() {
+
+        var collar;
+        if (this.props.attributes_collar == 0) {
+            collar = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_collar != null) {
+            collar = this.props.comparison_collar.explanation;
+        } else {
+            collar = '-';
+        }
+
+        var shoulders;
+        if (this.props.attributes_shoulders == 0) {
+            shoulders = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_shoulders != null) {
+            shoulders = this.props.comparison_shoulders.explanation;
+        } else {
+            shoulders = '-';
+        }
+
+        var sleeve;
+        if (this.props.attributes_sleeve == 0) {
+            sleeve = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_sleeve != null) {
+            sleeve = this.props.comparison_sleeve.explanation;
+        } else {
+            sleeve = '-';
+        }
+
+        var chest;
+        if (this.props.attributes_chest == 0) {
+            chest = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_chest != null) {
+            chest = this.props.comparison_chest.explanation;
+        } else {
+            chest = '-';
+        }
+
+        var waist;
+        if (this.props.attributes_waist == 0) {
+            waist = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_waist != null) {
+            waist = this.props.comparison_waist.explanation;
+        } else {
+            waist = '-';
+        }
+
+        var length;
+        if (this.props.attributes_length == 0) {
+            length = <FontAwesomeIcon icon="check" />;
+        } else if (this.props.attributes_length != null) {
+            length = this.props.comparison_length.explanation;
+        } else {
+            length = '-';
+        }
+
         return(
             <div className='suggestion'>
               <div className='modelHemd'>
@@ -57,12 +92,12 @@ class SuggestionTest extends Component {
                     <li>Lengte:</li>
                   </ul>
                   <ul>
-                    <li>{this.state.fit_comparison.collar}</li>
-                    <li>{this.state.fit_comparison.shoulders}</li>
-                    <li>{this.state.fit_comparison.sleeve}</li>
-                    <li>{this.state.fit_comparison.chest}</li>
-                    <li>{this.state.fit_comparison.waist}</li>
-                    <li>{this.state.fit_comparison.length}</li>
+                    <li>{collar}</li>
+                    <li>{shoulders}</li>
+                    <li>{sleeve}</li>
+                    <li>{chest}</li>
+                    <li>{waist}</li>
+                    <li>{length}</li>
                   </ul>
                 </div>
                 <h3><br/>€{this.props.price}</h3>

@@ -32,7 +32,7 @@ class Wizard extends Component {
                   'extra_questions': '',
                 },
                 'sleeve': {
-                  'size': 88.0,
+                  'size': 67.0,
                   'review': 'past',
                   'extra_questions': '',
                 },
@@ -65,7 +65,7 @@ class Wizard extends Component {
                   'extra_questions': ''
                 },
                 'sleeve': {
-                  'size': 91.0,
+                  'size': 70.0,
                   'review': 'past',
                   'extra_questions': ''
                 },
