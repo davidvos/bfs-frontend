@@ -10,7 +10,8 @@ class NavButtons extends Component {
         super(props);
         this.dataConfirmation = this.dataConfirmation.bind(this);
         this.state = {
-            'errors': ''
+            'errors': '',
+            'previous_step_error': ''
         }
     }
 
@@ -19,9 +20,17 @@ class NavButtons extends Component {
         var extraQuestions = this.props.userData.shirt1[title].extra_questions;
         var warning = false;
         var error = false;
+        var shoulder_empty = false;
+
         for(var i in extraQuestions) {
             if(extraQuestions[i][1] == '') {
                 error = true;
+            }
+        }
+
+        if(this.props.partData.title == 'sleeve') {
+            if(!(this.props.completed.indexOf('shoulders') >= 0)) {
+                shoulder_empty = true;
             }
         }
 
@@ -29,9 +38,14 @@ class NavButtons extends Component {
             warning = true;
         }
 
+        console.log(shoulder_empty);
 
         let errors = '';
-        if(error === true) {
+        if(shoulder_empty === true) {
+            this.setState({
+              'previous_step_error': 'Voordat je \'mouw\' invult, dien je \'schouder\' in te vullen.'
+            })
+        } else if(error === true) {
             this.setState({
               'errors': 'Je hebt een vraag niet ingevuld. Vul deze in om door te gaan.'
             })
@@ -41,6 +55,8 @@ class NavButtons extends Component {
             this.props.loadShirts(title);
             this.props.setCompleted(title);
         }
+
+
     }
 
     render() {
@@ -52,6 +68,7 @@ class NavButtons extends Component {
             <div>
             <p>{this.props.userData.error}</p>
             <p>{this.state.errors}</p>
+            <p>{this.state.previous_step_error}</p>
               <div className='proceedButtons'>
                 <Link to={prev_url} className='previous'>Vorige</Link>
                 <a onClick={this.dataConfirmation} className='next'>Bevestigen</a>

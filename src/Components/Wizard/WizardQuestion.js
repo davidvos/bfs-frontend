@@ -57,6 +57,7 @@ class WizardQuestion extends Component {
             userData={this.props.userData}
             loadShirts={this.props.loadShirts}
             setCompleted={this.props.setCompleted}
+            completed={this.props.completed}
           />
 
           <WizardNavigation
