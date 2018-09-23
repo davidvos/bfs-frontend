@@ -20,7 +20,7 @@ class Wizard extends Component {
       'userData': {
 
           'shirt1': {
-                'title': 'Tommy',
+                'title': 'Naam eerste overhemd',
                 'collar': {
                   'size': 38.5,
                   'review': 'past',
@@ -53,7 +53,7 @@ class Wizard extends Component {
                 }
           },
           'shirt2': {
-                'title': 'Hugo',
+                'title': 'Naam tweede overhemd',
                 'collar': {
                   'size': 40.0,
                   'review': 'past',

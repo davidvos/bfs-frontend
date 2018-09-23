@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import WebshopPopup from './WebshopPopup';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SuggestionTest extends Component {
@@ -14,8 +16,18 @@ class SuggestionTest extends Component {
                 'chest': ['-', this.props.comparison_chest, this.props.attributes_chest],
                 'waist': ['-', this.props.comparison_waist, this.props.attributes_waist],
                 'length': ['-', this.props.comparison_length, this.props.attributes_length]
-            }
+            },
+            'showPopup': false
         }
+        this.showPopup = this.showPopup.bind(this);
+
+    }
+
+    showPopup() {
+        console.log('das');
+        this.setState({
+            'showPopup': !this.state.showPopup
+        })
     }
 
     render() {
@@ -74,8 +86,16 @@ class SuggestionTest extends Component {
             length = '-';
         }
 
+        var popUp;
+        if(this.state.showPopup) {
+            popUp = <WebshopPopup fit={this.props.fit_description} size={this.props.size} hidePopup={this.showPopup} url={this.props.url} />
+        } else {
+            popUp = <div></div>;
+        }
+
         return(
-            <div className='suggestion'>
+            <div>
+            <div className='suggestion' onClick={this.showPopup}>
               <div className='modelHemd'>
                 <img src={this.props.photo} alt='' />
               </div>
@@ -100,8 +120,11 @@ class SuggestionTest extends Component {
                     <li>{length}</li>
                   </ul>
                 </div>
-                <h3><br/>€{this.props.price}</h3>
+                <h3><br/>Maat: {this.props.size}</h3>
+                <h3>€{this.props.price}</h3>
               </div>
+              </div>
+              {popUp}
             </div>
         )
     }

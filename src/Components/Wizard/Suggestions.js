@@ -39,6 +39,9 @@ class Suggestions extends Component {
                                     name={name}
                                     price={price}
                                     fit_percentage={fit_percentage}
+                                    size={this.props.shirtData.data[i].size}
+                                    fit_description={this.props.shirtData.data[i].fit_type}
+                                    url={this.props.shirtData.data[i].link}
 
                                     comparison_collar={comparison_collar}
                                     comparison_shoulders={comparison_shoulders}

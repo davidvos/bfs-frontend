@@ -84,6 +84,20 @@ header h1 {
   margin-top: 5px;
 }
 
+.menuMobile {
+    position: absolute;
+    background: #fff;
+    left: 0;
+    right: 0;
+}
+
+.menuMobile ul li {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+
+}
+
 .callToAction {
   display: flex;
   flex-direction: column;
@@ -110,6 +124,8 @@ header h1 {
 
 .firstForm {
   padding: 40px 20px;
+  background: #edf6ff;
+
 }
 
 .firstForm p {
@@ -132,7 +148,7 @@ header h1 {
 
 .firstForm input[type=submit] {
   margin-top: 20px;
-  background: #34495e;
+  background:#2ecc71;
   padding: 9.5px 15px;
   border: none;
   color: #fff;
@@ -553,6 +569,45 @@ select {
 
 .specificatieLijst li span {
   width: 100px;
+}
+
+.popupOverlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.webshopPopup {
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 20px;
+}
+
+.webshopPopup a {
+    text-decoration: none;
+}
+
+.webshopPopup p {
+    clear: both;
+}
+
+.awayX {
+    text-align: right;
+    border-radius: 30px;
+    font-size: 20px;
+    float: right;
+    width: 25px;
+    height:35px;
+    font-family: 'Lato';
+
+
+
 }
 
 /* FOOTER */

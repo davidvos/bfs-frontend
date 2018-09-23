@@ -29,7 +29,7 @@ class Homepage extends Component {
         </div>
 
         <div className='firstForm wrapper' id='startNow'>
-          <h3>Benoem jouw favoriete twee overhemden</h3>
+          <h3>Geef een naam aan je twee favoriete overhemden</h3>
           <p>Pak twee verschillende zakelijke overhemden die lekker
           zitten. Geef ze hieronder een passende naam waar je ze tijdens
           het proces aan kan herkennen.</p>

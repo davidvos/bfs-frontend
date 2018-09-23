@@ -11,6 +11,7 @@ class Suggestion extends Component {
 
   render() {
     var image = this.props.suggestionData.photo;
+    console.log(this.props.suggestionData);
     return(
       <div className='suggestion'>
         <div className='modelHemd'>
@@ -37,6 +38,7 @@ class Suggestion extends Component {
               <li>{this.props.suggestionData.fit_comparisons.length[0]}</li>
             </ul>
           </div>
+          <h3>Yes</h3>
           <h3><br/>€{this.props.suggestionData.price}</h3>
         </div>
       </div>
