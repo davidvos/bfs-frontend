@@ -6,6 +6,7 @@ import Homepage from './Homepage';
 import WizardQuestion from './Wizard/WizardQuestion';
 import NavigationScreen from './Wizard/NavigationScreen';
 import ExplanationScreen from './Wizard/ExplanationScreen';
+import RegisterPage from './Register';
 
 import * as PostSizes from '../Data/PostSizes.js';
 import * as GetShirts from '../Data/GetShirts.js';
@@ -212,6 +213,11 @@ class Wizard extends Component {
               onShirtChange={this.dataHandler}
               userData={this.state.userData}
             />}
+          />
+
+          <Route
+            exact={true} path='/register'
+            render={() => <RegisterPage />}
           />
 
           <Route

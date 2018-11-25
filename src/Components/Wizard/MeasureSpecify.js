@@ -39,7 +39,7 @@ class MeasureSpecify extends Component {
 
     return(
       <div>
-        <p className='measureSpecify'><span>{this.props.title}</span> van {this.props.userData[this.props.shirtShort].title} in cm</p>
+        <p className='measureSpecify'><span>{this.props.partData.dutch_title}</span> van {this.props.userData[this.props.shirtShort].title} in cm</p>
         <div className='clothing1'>
           <select id='sizePicker' value={this.props.userData[this.props.shirtShort][this.props.title].size} onChange={this.onShirtChange}>
             {sizes.map((size) => <option key={size} value={size}>{size}</option>)}

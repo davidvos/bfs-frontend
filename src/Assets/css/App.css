@@ -289,6 +289,10 @@ header h1 {
   font-size: 13px;
 }
 
+.error_message {
+  color: red;
+}
+
 .preferencePicker a:first-of-type {
   border-left: none;
   border-top-left-radius: 14px;

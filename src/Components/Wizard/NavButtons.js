@@ -66,8 +66,8 @@ class NavButtons extends Component {
 
         return(
             <div>
-            <p>{this.props.userData.error}</p>
-            <p>{this.state.errors}</p>
+            <p className='error_message'>{this.props.userData.error}</p>
+            <p className='error_message'>{this.state.errors}</p>
             <p>{this.state.previous_step_error}</p>
               <div className='proceedButtons'>
                 <Link to={prev_url} className='previous'>Vorige</Link>

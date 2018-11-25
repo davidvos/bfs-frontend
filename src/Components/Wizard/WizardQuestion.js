@@ -23,7 +23,7 @@ class WizardQuestion extends Component {
       <section className='question'>
         <div className='wrapper'>
 
-          <p>Meet de {this.props.partData.title} van {this.props.userData.shirt1.title} en {this.props.userData.shirt2.title} en druk op volgende.</p>
+          <p>Meet de {this.props.partData.dutch_title} van {this.props.userData.shirt1.title} en {this.props.userData.shirt2.title} en druk op bevestigen.</p>
 
           <ExplanationSwitcher partData={this.props.partData} />
 

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Link } from "react-router-dom";
 
 class Header extends Component {
 
@@ -12,7 +11,6 @@ class Header extends Component {
             'showMenu': false
         }
         this.showMenu = this.showMenu.bind(this);
-
     }
 
     showMenu() {
@@ -22,13 +20,13 @@ class Header extends Component {
     }
 
   render() {
-
     var menu;
     if(this.state.showMenu) {
         menu =  <div className='menuMobile'>
                     <ul>
                         <li>Gegevens opslaan</li>
                         <li>Inloggen</li>
+                        <Link to='/register'><li>Registreren</li></Link>
                         <li>Over Ons</li>
                         <li>Team</li>
                         <li>Webshop</li>
